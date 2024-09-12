@@ -1,5 +1,6 @@
 import React from 'react'
 import image from "../Assets/login.jpg";
+
 import { Link } from 'react-router-dom';
 const Register = () => {
   return (

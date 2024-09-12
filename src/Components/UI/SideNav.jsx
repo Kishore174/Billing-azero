@@ -2,14 +2,20 @@ import React, { useState } from 'react';
 import { FaSignOutAlt, FaHome, FaMoneyBill, FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import logo from "../Assets/cropped_image.png"
+import logo01 from "../Assets/logo01.png";
+import { CubeIcon } from '@heroicons/react/outline';
+
 const SideNav = ({ isOpen }) => {
   const [activeItem, setActiveItem] = useState('Dashboard');
 
   const menuItems = [
     { name: 'Dashboard', path: '/dashboard', icon: FaHome },
     { name: 'Customer', path: '/customer', icon: FaUser },
+    { name: 'Products', path: '/Product', icon:CubeIcon },
+
     { name: 'Payment', path: '/payment', icon: FaMoneyBill },
-    { name: 'Logout', path: '/', icon: FaSignOutAlt },
+    // { name: 'Logout', path: '/', icon: FaSignOutAlt },
+
   ];
 
   return (
@@ -18,12 +24,12 @@ const SideNav = ({ isOpen }) => {
         isOpen ? 'w-64' : 'w-16 md:w-64'
       }`}
     >
-      {/* Card-like Section */}
-      <div className='h-16   md:w-36 flex justify-center mx-auto  bg-white shadow-md'>
-
+     
+      <div className=' md:h-24  h-12  md:w-36 flex justify-center mx-auto    '>
+<img src={logo01} alt="logo01" />
 </div>
 
-      {/* Menu Items */}
+     
       <div className="flex-1 flex flex-col">
         {menuItems.map((item) => {
           const Icon = item.icon;
@@ -50,17 +56,20 @@ const SideNav = ({ isOpen }) => {
       </div>
       <div className=' hidden md:flex '>
       <div className="p-4 border border-gray-300   rounded-lg  poppins-bold text-center mx-auto md:w-52  w-full">
-        <a href="https://azerotech.com/">
+        
         <img
-          src={logo} // Replace with your logo URL or import the logo image
+          src={logo}  
           alt="Azero Logo"
           className="h-10 w-10 mx-auto mb-2"
         />
-        </a>
+       
         <h2 className="font-bold text-xl">Azero Tech</h2>
         <p className="text-gray-600 poppins-regular mt-2  text-center text-xs">
-          Dedicated to shaping your vision into reality, leveraging a decade of expertise in technology solutions. Our mission is to empower businesses with creative innovation, now headquartered in Vellore.
+          Dedicated to shaping your vision into reality  now headquartered in Vellore.
         </p>
+        <a href="https://azerotech.com/">
+        <button className='text-purple-600  underline  poppins-regular text-xs  ml-8 '>Know More</button>
+        </a>  
       </div>
       </div>
     </div>

@@ -44,7 +44,7 @@ const products = [
   },
 ];
 
-const productsPerPage = 6; // Number of products per page
+const productsPerPage = 6; 
 
 const Product = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -84,7 +84,7 @@ const Product = () => {
           >
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-bold">{product.name}</h2>
-              <MdModeEdit className="text-gray-500 text-2xl cursor-pointer" />
+              <MdModeEdit className="text-gray-500  text-2xl cursor-pointer" />
             </div>
             <div className="mb-4">
               <p className="text-gray-700">Price: <span>{product.amount}</span></p>

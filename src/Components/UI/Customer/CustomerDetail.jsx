@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { PlusIcon } from '@heroicons/react/outline';
 import { Link } from 'react-router-dom';
-import Pagination from '../../Pagination'; // Import the Pagination component
+// import Pagination from '../../Pagination'; // Import the Pagination component
  
 
 const customers = [
@@ -24,23 +24,23 @@ const customers = [
    
   },
 ];
-const productsPerPage = 6; 
+// const productsPerPage = 6; 
 
 const CustomerDetail = () => {
    
-  const [currentPage, setCurrentPage] = useState(1);
+  // const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPages = Math.ceil(customers.length / productsPerPage);
+  // const totalPages = Math.ceil(customers.length / productsPerPage);
 
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
+  // const handlePageChange = (page) => {
+  //   setCurrentPage(page);
+  // };
   // const navigate = useNavigate();
 
-  const paginatedProducts = customers.slice(
-    (currentPage - 1) * productsPerPage,
-    currentPage * productsPerPage
-  );
+  // const paginatedProducts = customers.slice(
+  //   (currentPage - 1) * productsPerPage,
+  //   currentPage * productsPerPage
+  // );
   return (
     <div className='mt-8'>
       <div className='flex justify-between poppins-bold  p-2 mb-4'>
@@ -57,7 +57,7 @@ const CustomerDetail = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {customers.map((customer, index) => (
-          <div key={index} className="bg-white rounded-xl border border-gray-100 shadow-md p-4">
+          <div key={index} className="bg-white rounded-xl border border-gray-200 shadow-md p-4">
             <div className="text-black poppins-bold text-xl">{customer.name}</div>
             <div className="text-gray-500 poppins-regular text-sm">{customer.phone}</div>
             <div className="flex justify-between items-center mt-4">
@@ -72,11 +72,11 @@ const CustomerDetail = () => {
           </div>
         ))}
       </div>
-      <Pagination
+      {/* <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
         onPageChange={handlePageChange}
-      />
+      /> */}
       
     </div>
   );

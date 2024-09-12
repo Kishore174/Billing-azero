@@ -14,6 +14,9 @@ import Register from './Components/UI/Register';
 import Addcustomer from './Components/UI/Customer/Addcustomer';
 import AddDeliverypartner from './Components/UI/DeliveryPartner/AddDeliverypartner';
 import AddProduct from './Components/UI/Products/AddProduct';
+import Invoice from './Components/UI/Invoice/Invoice';
+import Customer from './Components/UI/Invoice/Customer';
+import Settings from './Components/UI/settings/Settings';
 
 function App() {
   return (
@@ -31,10 +34,16 @@ function App() {
               <Route path="Payment" element={<Payment />} />
               <Route path="Product" element={<Product />} />
               <Route path="addProduct" element={<AddProduct />} />
+              <Route path="Invoice" element={<Invoice />} />
+              <Route path="customerpage" element={<Customer />} />
+
+
 
 
               <Route path="addcustomer" element={<Addcustomer />} />
               <Route path="addpartner" element={<AddDeliverypartner />} />
+              <Route path="settings" element={<Settings />} />
+
 
 
 

@@ -15,12 +15,11 @@ import { MdOutlineKeyboardDoubleArrowLeft } from 'react-icons/md';
 const Dashboard = () => {
   return (
     <div className="min-h-screen bg-gradient-to-r poppins-regular  p-3">
-      <div className='flex justify-left'>
+      <div className='flex  justify-center  md:justify-left'>
         {/* <span><MdOutlineKeyboardDoubleArrowLeft size={24} /></span> */}
         <h1 className="text-3xl  font-extrabold poppins-bold text-left text-gray-800 mb-8">Dashboard</h1>
       </div>
       
-      {/* Main content grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
         <Link to="/customer">
           <div className="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 border border-blue-200 h-full">
@@ -51,7 +50,7 @@ const Dashboard = () => {
             <p className="text-center text-sm text-gray-600">Manage and update product listings.</p>
           </div>
         </Link>
-
+ <Link to ="/customerpage">
         <div className="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 border border-orange-200 h-full">
           <div className="bg-orange-100 p-4 h-16 w-16 rounded-full mx-auto mb-4 flex items-center justify-center">
             <TbInvoice className="h-8 w-8 text-orange-600" />
@@ -59,6 +58,7 @@ const Dashboard = () => {
           <h2 className="text-2xl font-semibold text-center text-gray-800 mb-2">Invoice</h2>
           <p className="text-center text-sm text-gray-600">Download your Invoice</p>
         </div>
+        </Link>
 
         <div className="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 border border-purple-200 h-full">
           <div className="bg-purple-100 p-4 h-16 w-16 rounded-full mx-auto mb-4 flex items-center justify-center">
@@ -67,14 +67,15 @@ const Dashboard = () => {
           <h2 className="text-2xl font-semibold text-center text-gray-800 mb-2">Report</h2>
           <p className="text-center text-sm text-gray-600">Access detailed reports and insights.</p>
         </div>
-
+<Link to ="/settings">
         <div className="bg-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 border border-gray-200 h-full">
           <div className="bg-gray-100 p-4 h-16 w-16 rounded-full mx-auto mb-4 flex items-center justify-center">
-            <CogIcon className="h-8 w-8 text-gray-600" />
+            <CogIcon className="h-8 w-8 text-gray-600"/>
           </div>
           <h2 className="text-2xl font-semibold text-center text-gray-800 mb-2">Settings</h2>
           <p className="text-center text-sm text-gray-600">Adjust application settings and preferences.</p>
         </div>
+        </Link>
       </div>
     </div>
   );
