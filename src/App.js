@@ -8,16 +8,17 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CustomerDetail from './Components/UI/Customer/CustomerDetail';
 import DeliveryPartner from './Components/UI/DeliveryPartner/DeliveryPartner';
 import Payment from './Components/UI/Payment/Payment';
-import Product from './Components/UI/Products/Product';
+import Product from  './Components/UI/Products/Product';
 import Login from './Components/UI/Login';
 import Register from './Components/UI/Register';
 import Addcustomer from './Components/UI/Customer/Addcustomer';
 import AddDeliverypartner from './Components/UI/DeliveryPartner/AddDeliverypartner';
 import AddProduct from './Components/UI/Products/AddProduct';
 import Invoice from './Components/UI/Invoice/Invoice';
-import Customer from './Components/UI/Invoice/Customer';
-import Settings from './Components/UI/settings/Settings';
-
+import Customer from './Components/UI/Invoice/Customer'; 
+import Profile from './Components/UI/Profile/Profile';
+import Settings from './Components/UI/Settings/Settings';
+ 
 function App() {
   return (
     <BrowserRouter>
@@ -42,7 +43,9 @@ function App() {
 
               <Route path="addcustomer" element={<Addcustomer />} />
               <Route path="addpartner" element={<AddDeliverypartner />} />
+              <Route path="profile" element={<Profile />} />
               <Route path="settings" element={<Settings />} />
+
 
 
 
@@ -56,15 +59,8 @@ function App() {
 
               
               </Route>
-              
-
-              {/* <Route path="/login" */}
-
-              {/* Add other routes here */}
             </Routes>
-          {/* </main>
-        </div>
-      </div> */}
+           
     </BrowserRouter>
   );
 }

@@ -4,24 +4,32 @@ import { BiSearch } from 'react-icons/bi';
 import profile from '../Assets/profile.jpg';
 
 const Navbar = () => {
-  // State to toggle the dropdown menu
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [NotificationOpen, setNotificationOpen] = useState(false);
+  const [notifications, setNotifications] = useState([
+    { id: 1, message: 'New comment on your post' },
+    { id: 2, message: 'You have a new follower' },
+    { id: 3, message: 'Your report is ready ' },
+  ]);
+  const [notificationOpen, setNotificationOpen] = useState(false);
 
-  const menuRef = useRef(null);  // Ref for the dropdown menu
+  const menuRef = useRef(null);
 
-  // Function to toggle dropdown menu
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
-  const NotificationDown = () => {
-    setNotificationOpen(!NotificationOpen);
+
+  const toggleNotifications = () => {
+    setNotificationOpen(!notificationOpen);
+    if (!notificationOpen) {
+      setNotifications([]);  
+    }
   };
-  
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setDropdownOpen(false);
+        setNotificationOpen(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -44,37 +52,34 @@ const Navbar = () => {
           <BiSearch className="text-gray-300 absolute left-2 top-1/2 transform -translate-y-1/2 w-5 h-5" />
         </div>
 
-        {/* Right Side: Notifications and Profile */}
-        <div className="hidden md:flex items-center space-x-6 ml-auto">
-          {/* Notification Icon */}
-          <div className="relative inline-block" onClick={NotificationDown}>
+ 
+        <div className="flex items-center space-x-6 ml-auto">
+ 
+          <div className="relative inline-block" onClick={toggleNotifications}>
             <FaBell className="text-gray-600 w-6 h-6 cursor-pointer hover:text-gray-800" />
-            <span className="absolute top-0 right-0 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-white bg-red-600 rounded-full transform translate-x-1/2 -translate-y-1/2">
-              3
-            </span>
-          </div>
-          {NotificationOpen && (
-              <div className="absolute top-10 right-0 left-0 mt-2 w-36 bg-white border border-gray-200 rounded-md shadow-lg py-1 z-20">
-                <a
-                  href="#profile"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                >
-                  Profile
-                </a>
-                <a
-                  href="#settings"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                >
-                  Settings
-                </a>
-                <a
-                  href="/"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                >
-                  Logout
-                </a>
-              </div>
+            {notifications.length > 0 && (
+              <span className="absolute top-0 right-0 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-white bg-red-600 rounded-full transform translate-x-1/2 -translate-y-1/2">
+                {notifications.length}
+              </span>
             )}
+          </div>
+
+          
+          {notificationOpen && (
+            <div className="absolute right-72 mt-24 w-72 bg-white border border-gray-200 rounded-md shadow-lg py-2 z-20">
+              {notifications.length > 0 ? (
+                notifications.map((notification) => (
+                  <div key={notification.id} className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    {notification.message}
+                  </div>
+                ))
+              ) : (
+                <div className="px-4 py-2 text-sm text-gray-500">
+                  No new notifications
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Profile Section */}
           <div className="relative flex items-center space-x-2 cursor-pointer" onClick={toggleDropdown} ref={menuRef}>
@@ -85,21 +90,21 @@ const Navbar = () => {
             />
             <div className="hidden md:flex flex-col text-right">
               <span className="font-semibold text-lg">Azero</span>
-              <span className="text-gray-600 text-center text-sm">Admin</span>
+              <span className="text-gray-600 text-sm">Admin</span>
             </div>
             <FaChevronDown className="text-gray-600 hover:text-gray-800" />
 
             {/* Dropdown Menu */}
             {dropdownOpen && (
-              <div className="absolute top-10 right-0 left-0.5 mt-2 w-36 bg-white border border-gray-200 rounded-md shadow-lg py-1 z-20">
+              <div className="absolute top-12 right-0 w-36 bg-white border border-gray-200 rounded-md shadow-lg py-1 z-20">
                 <a
-                  href="#profile"
+                  href="/profile"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
                   Profile
                 </a>
                 <a
-                  href="#settings"
+                  href="/settings"
                   className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                 >
                   Settings

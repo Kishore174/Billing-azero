@@ -3,17 +3,25 @@ import { FaSignOutAlt, FaHome, FaMoneyBill, FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import logo from "../Assets/cropped_image.png"
 import logo01 from "../Assets/logo01.png";
-import { CubeIcon } from '@heroicons/react/outline';
+import { ClipboardListIcon, CogIcon, CubeIcon } from '@heroicons/react/outline';
+import { TbInvoice } from 'react-icons/tb';
 
 const SideNav = ({ isOpen }) => {
   const [activeItem, setActiveItem] = useState('Dashboard');
 
   const menuItems = [
-    { name: 'Dashboard', path: '/dashboard', icon: FaHome },
-    { name: 'Customer', path: '/customer', icon: FaUser },
-    { name: 'Products', path: '/Product', icon:CubeIcon },
+    { name:'Dashboard', path: '/dashboard', icon: FaHome },
+    { name:'Customer', path: '/customer', icon: FaUser },
+    { name:'Products', path: '/Product', icon:CubeIcon },
 
-    { name: 'Payment', path: '/payment', icon: FaMoneyBill },
+    { name:'Payment', path: '/payment', icon: FaMoneyBill },
+
+    { name:'Invoice', path: '/customerpage', icon:TbInvoice },
+    { name:'Report', path: '/Product', icon:CogIcon },
+
+    { name:'Settings', path: '/settings', icon:ClipboardListIcon },
+
+
     // { name: 'Logout', path: '/', icon: FaSignOutAlt },
 
   ];
@@ -55,24 +63,27 @@ const SideNav = ({ isOpen }) => {
         })}
       </div>
       <div className=' hidden md:flex '>
-      <div className="p-4 border border-gray-300   rounded-lg  poppins-bold text-center mx-auto md:w-52  w-full">
-        
-        <img
-          src={logo}  
-          alt="Azero Logo"
-          className="h-10 w-10 mx-auto mb-2"
-        />
-       
-        <h2 className="font-bold text-xl">Azero Tech</h2>
-        <p className="text-gray-600 poppins-regular mt-2  text-center text-xs">
-          Dedicated to shaping your vision into reality  now headquartered in Vellore.
-        </p>
-        <a href="https://azerotech.com/">
-        <button className='text-purple-600  underline  poppins-regular text-xs  ml-8 '>Know More</button>
-        </a>  
-      </div>
-      </div>
-    </div>
+      <div className="p-2 border border-gray-300 rounded-lg poppins-bold text-center mx-auto md:w-52   w-full flex flex-col items-center">
+  <img
+    src={logo}
+    alt="Azero Logo"
+    className="h-8 w-8 mb-1"  
+  />
+
+  {/* <h2 className="font-bold text-xl">Azero Tech</h2> */}
+  <p className="text-gray-600 poppins-regular mt-1 text-center text-xs">
+    Dedicated to shaping your vision into reality now headquartered in Vellore.
+  </p>
+  
+  <a href="https://azerotech.com/">
+    <button className='text-purple-600 underline poppins-regular text-xs mt-2'>
+      Know More
+    </button>
+  </a>
+
+</div>
+</div>
+</div>
   );
 };
 
