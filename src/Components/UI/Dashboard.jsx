@@ -16,7 +16,6 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen bg-gradient-to-r poppins-regular  p-3">
       <div className='flex  justify-center  md:justify-left'>
-        {/* <span><MdOutlineKeyboardDoubleArrowLeft size={24} /></span> */}
         <h1 className="text-3xl  font-extrabold poppins-bold text-left text-gray-800 mb-8">Dashboard</h1>
       </div>
       

@@ -34,19 +34,19 @@ const Payment = () => {
               <th className="px-6 py-3 border-b text-left text-sm font-semibold">Total Amount</th>
               <th className="px-6 py-3 border-b text-left text-sm font-semibold">Status</th>
               <th className="px-6 py-3 border-b text-left text-sm font-semibold">Payment Method</th>
-            </tr>
+            </tr>  
           </thead>
-          <tbody>
+          <tbody> 
             {payments.map((payment, index) => (
-              <tr key={index} className={`bg-gray-${index % 2 === 0 ? '100' : '50'} hover:bg-gray-200`}>
+              <tr key={index} className={`bg-gray-${index % 2 === 0 ? '100' : '50'} hover:bg-gray-200`  }>
                 <td className="px-6 py-4 border-b text-sm">{payment.customerName}</td>
                 <td className="px-6 py-4 border-b text-sm">{payment.totalAmount}</td>
                 <td className="px-6 py-4 border-b text-sm">
-                  <div className="text-green-500 font-medium">Received: {payment.status.received}</div>
+                  <div className="text-green-500 font-medium">Received:{payment.status.received}</div>
                   <div className={`text-${payment.status.pending === '₹0' ? 'green' : 'red'}-500 font-medium`}>
-                    Pending: {payment.status.pending}
+                    Pending: {  payment.status.pending}
                   </div>
-                </td>
+                </td>    
                 <td className="px-6 py-4 border-b text-sm">{payment.paymentMethod}</td>
               </tr>
             ))}

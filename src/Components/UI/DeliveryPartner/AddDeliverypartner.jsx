@@ -11,7 +11,6 @@ const AddDeliverypartner = () => {
 
   return (
     <div className='p-5 max-w-3xl mx-auto'>
-      {/* Header with Back Button */}
       <div className='flex items-center space-x-3 mb-6'>
         <button
           onClick={() => navigate(-1)}

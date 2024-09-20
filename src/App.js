@@ -18,6 +18,8 @@ import Invoice from './Components/UI/Invoice/Invoice';
 import Customer from './Components/UI/Invoice/Customer'; 
 import Profile from './Components/UI/Profile/Profile';
 import Settings from './Components/UI/Settings/Settings';
+import UpdatePrice from './Components/UI/Settings/UpdatePrice';
+import PaymentMethod from './Components/UI/Settings/PaymentMethod';
  
 function App() {
   return (
@@ -45,19 +47,9 @@ function App() {
               <Route path="addpartner" element={<AddDeliverypartner />} />
               <Route path="profile" element={<Profile />} />
               <Route path="settings" element={<Settings />} />
+              <Route path="updateprice" element={<UpdatePrice />} />
+              <Route path="paymentmethod" element={<PaymentMethod />} />
 
-
-
-
-
-
-
-
-
-        
-
-
-              
               </Route>
             </Routes>
            
